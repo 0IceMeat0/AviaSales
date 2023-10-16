@@ -1,0 +1,19 @@
+.app{
+  width: 100lvw;
+  
+  background-color: #F3F7FA;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  &-logo{
+    justify-content: flex-start;
+    align-self: center;
+  }
+  &-elements{
+    display: grid;
+    grid-template-areas: 
+    "aside header"
+    "aside list";
+  }
+}
