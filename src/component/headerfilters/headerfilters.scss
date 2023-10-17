@@ -16,7 +16,9 @@
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
     }
-   
+   &:hover{
+    box-shadow: 0 0 50px rgba(0,0,0,.2);
+   }
   }
 }
 .active {

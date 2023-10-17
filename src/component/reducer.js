@@ -29,6 +29,10 @@ export const chooseLoad = createAction("IS_LOAD");
 
 export const chooseMoreTickets = createAction("more_tickets");
 
+export const internetOff = createAction("internet_off");
+export const internetOn = createAction("internet_on");
+
+
 const reducer = createReducer(defaultState, {
   [chooseAll]: function (state) {
     if (!state.all) {
@@ -119,5 +123,11 @@ const reducer = createReducer(defaultState, {
   [chooseLoad]: function (state) {
     state.load = false;
   },
+  [internetOff]: function(state){
+    state.internet = false;
+  },
+  [internetOn]: function(state){
+    state.internet = true;
+  }
 });
 export default reducer;

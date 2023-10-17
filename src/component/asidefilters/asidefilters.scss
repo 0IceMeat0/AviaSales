@@ -9,12 +9,17 @@
   grid-area: aside;
   display: flex;
   flex-direction: column;
-  
+  @media (max-width: 720px) {
+   width: 130px;
+   height: 350px;
+   justify-content: space-around;
+  }
   &-title{
     font-size: 14px;
     height: 25px;
     padding: 10px;
     font-family: "MontB", sans-serif;
+    
   }
   &-button {
     align-items: center;

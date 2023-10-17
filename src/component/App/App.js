@@ -7,7 +7,7 @@ import AsideFilters from "../asidefilters/asidefilters";
 import AviaList from "../avialist/avialist";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { chooseAddId, chooseTickets, chooseLoad } from "../reducer";
+import { chooseAddId, chooseTickets, chooseLoad, internetOn, internetOff } from "../reducer";
 
 function App() {
   const dispatch = useDispatch();
@@ -83,6 +83,17 @@ function App() {
   useEffect(() => {
     fetchTickets();
   }, [id]);
+
+
+  useEffect(() => {
+    window.onoffline = () => {
+      dispatch(internetOff());
+    };
+    window.ononline = () => {
+      dispatch(internetOn());
+    };
+  });
+
 
   return (
     <div className="app">

@@ -1,11 +1,14 @@
 .app{
   width: 100lvw;
-  
-  background-color: #F3F7FA;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 720px) {
+    transform: scale(0.5);
+    transform-origin: top left;
+    width: max-content;
+   }
   &-logo{
     justify-content: flex-start;
     align-self: center;

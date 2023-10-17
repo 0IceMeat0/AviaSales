@@ -4,11 +4,12 @@ import AviaItem from "../aviaitem/aviaitem";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch } from "react-redux";
 import { chooseMoreTickets } from "../reducer";
-import Loader from "../footer/spinner";
+import Loader from "../ui-component/spinner";
+import AlertError from "../ui-component/allerterror";
 
 function AviaList() {
   const dispatch = useDispatch();
-  const { ticketsList, tickCount, all, without, one, two, three, load } =
+  const { internet, ticketsList, tickCount, all, without, one, two, three, load } =
     useSelector((state) => state.toolkit);
   let id = 1;
 
@@ -47,7 +48,8 @@ function AviaList() {
 
   return (
     <div>
-      {load ? <Loader /> : null}
+      {load  ? <Loader /> : null}
+      {internet ? null : <AlertError />}
       {filteredTickets.length === 0 ? (
         <div>Нет билетов, удовлетворяющих выбранным фильтрам</div>
       ) : (
